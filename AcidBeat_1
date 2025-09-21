@@ -1,0 +1,38 @@
+//
+//  .--.   .---. .-..----.    .----. .----.  .--.  .---. 
+// / {} \ /  ___}| || {}  \   | {}  }| {_   / {} \{_   _}
+///  /\  \\     }| ||     /   | {}  }| {__ /  /\  \ | |  
+//`-'  `-' `---' `-'`----'    `----' `----'`-'  `-' `-'  
+//
+
+setCps(140/60/4)
+
+
+$: s("<sbd>!4").distort(slider(0.586,0,2))
+  
+  ._scope().color("green")._punchcard()
+
+.duck("2").duckattack(.2).duckdepth(.8)
+
+
+$bass: n(irand(10).sub(7).seg(16))
+  .scale("b:minor d:major <d:major, a:major>")
+  .rib(46,1)
+  .distort("2.2:.3")
+  .s("sawtooth")
+    .lpf(200)
+    .lpenv(irand(10).seg(4))
+    .lpq(12)
+    .orbit(2)
+  
+  ._scope().color("red")._punchcard()
+
+$vox:s("vox:0")
+  .phaser("<1 2 4 8 16>")
+  .gain(slider(0.515,0,1))
+  .rib(10,32)
+  .delay(.6)
+  .orbit(2)
+
+._scope()
+.color("cyan")._punchcard()

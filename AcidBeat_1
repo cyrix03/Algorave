@@ -5,10 +5,12 @@
 //`-'  `-' `---' `-'`----'    `----' `----'`-'  `-' `-'  
 //
 
+samples('https://raw.githubusercontent.com/cyrix03/Algorave/main/samples/strudel.json')
+
 setCps(140/60/4)
 
 
-$: s("<sbd>!4").distort(slider(0.586,0,2))
+$: s("<sbd>!4").distort(slider(0.5,0,2))
   
   ._scope().color("green")._punchcard()
 
@@ -27,9 +29,9 @@ $bass: n(irand(10).sub(7).seg(16))
   
   ._scope().color("red")._punchcard()
 
-$vox:s("vox:0")
+$vox:s("vox0")
   .phaser("<1 2 4 8 16>")
-  .gain(slider(0.515,0,1))
+  .gain(slider(0.5,0,1))
   .rib(10,32)
   .delay(.6)
   .orbit(2)
